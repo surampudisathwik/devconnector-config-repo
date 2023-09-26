@@ -42,3 +42,6 @@ eureka:
   client:
     serviceUrl:
        defaultZone: http://localhost:8761/eureka/
+
+api:
+  profile: http://PROFILE-SERVICE/profile
