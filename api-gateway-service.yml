@@ -20,6 +20,10 @@ spring:
           uri: lb://EXPERIENCE-SERVICE
           predicates:
             - Path= /experience/**
+        - id : AUTH-SERVICE
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path= /api/auth/**
 server:
   port: 9191
 management:
