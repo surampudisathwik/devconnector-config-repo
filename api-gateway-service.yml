@@ -4,26 +4,22 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: USER-SERVICE
-          uri: lb://USER-SERVICE
+        - id: AUTH-SERVICE
+          uri: lb://AUTH-SERVICE
           predicates:
-            - Path= /user/**
+            - Path= /api/authenticate/**
         - id: PROFILE-SERVICE
           uri: lb://PROFILE-SERVICE
           predicates:
-            - Path= /profile/**
+            - Path= /api/profile/**
         - id: EDUCATION-SERVICE
           uri: lb://EDUCATION-SERVICE
           predicates:
-            - Path= /education/**
+            - Path= /api/education/**
         - id: EXPERIENCE-SERVICE
           uri: lb://EXPERIENCE-SERVICE
           predicates:
-            - Path= /experience/**
-        - id : AUTH-SERVICE
-          uri: lb://AUTH-SERVICE
-          predicates:
-            - Path= api/authenticate/**
+            - Path= /api/experience/**
 server:
   port: 9191
 management:
@@ -37,5 +33,5 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 jwt:
   secret: mySecretKey
-  expireMs: 120000
-  refrEshexpireMs: 120000
+  expireMs: 1200
+  refrEshexpireMs: 1200
